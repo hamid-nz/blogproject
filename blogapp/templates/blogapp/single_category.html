@@ -1,0 +1,54 @@
+{% extends "blogapp/base.html" %}
+{% load static %}
+{% block title %} {% endblock %}
+{% block content %} 
+
+  <main id="main">
+
+    <div class="page-header-content">
+      <h1>This is page</h1>
+
+    </div>
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container text-center ">
+        {% comment %} <h1> HAmis jpoj  </h1> {% endcomment %}
+        <ol >          
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li>Blog Single</li>
+        </ol>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+
+<div class="container">
+  <div class="row justify-content-center  align-items-center  ">
+  {% for i in blogs %}
+
+    <div class="card  m-3" style="width: 25rem; ">
+      <img src="/media/{{i.featured_image}}" style="padding:2px; width: 24rem; height:12rem ;"  class="" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> <a href="{% url 'single_post' i.post_url %}">{{i.title}}</a></h5>
+          <p> 
+            <i class="bi bi-folder"></i> {{i.category}} &nbsp
+            <i class="bi bi-person"></i> {{i.author}}&nbsp
+            <i class="bi bi-clock"></i> {{i.published_date}}  
+          </p>
+        <p class="card-text">{{i.dicription | truncatewords:20 }}</p>
+      </div>
+    </div>
+  {% endfor %}   
+   
+    
+  </div>
+</div>
+
+
+  </main>
+
+
+
+  {% endblock %}
