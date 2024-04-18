@@ -52,14 +52,9 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Categories</a></li>
-
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="{% url 'about' %}">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
+          <li class="dropdown"><a href="#"><span>Categories</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li><a href="#">Drop Down 2</a></li>
@@ -67,7 +62,13 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>account</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Legal</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'disclaimer' %}">Discliamer</a></li>
+              <li><a href="{% url 'termsconditions' %}">Terms & Conditions</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{% url 'account' %}">Profile</a></li>
               <li><a href="{% url 'sign-in' %}">Login</a></li>

@@ -26,7 +26,20 @@ class HomeView(TemplateView):
         context["all_post"]= all_post
         context["all_category"]= all_category
         return context
+        
+#========================================== SIMPLE PAGES ===============================
+class AboutView(TemplateView):
+    template_name = 'blogapp/about.html'
 
+class ContactView(TemplateView):
+    template_name = 'blogapp/contact.html'
+    
+class DisclaimerView(TemplateView):
+    template_name = 'blogapp/disclaimer.html'  
+
+class TCView(TemplateView):
+    template_name = 'blogapp/terms_conditions.html'
+    
 
 class SinglePostView(TemplateView):
     template_name = 'blogapp/single_post.html'

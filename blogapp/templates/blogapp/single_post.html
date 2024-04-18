@@ -47,7 +47,7 @@
 
               <div class="entry-content">
                 <p>
-                  {{single_post.content}}
+                  {{single_post.content | safe }}
                 </p>
 
               </div>
@@ -56,14 +56,14 @@
 
                 <i class="bi bi-tags"></i>
                 <ul class="tags">
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
+                  <li><a href="#">{{single_post.tag}}</a></li>
+                  <li><a href="#">{{single_post.tag_2}}</a></li>
+                  <li><a href="#">{{single_post.tag_3}}</a></li>
                 </ul>
               </div>
 
             </article><!-- End blog entry -->
-
+{% comment %} 
             <div class="blog-author d-flex align-items-center">
               <img src="{% static 'blogapp/img/blog/blog-author.jpg' %}" class="rounded-circle float-left" alt="">
               <div>
@@ -200,7 +200,7 @@
 
               </div>
 
-            </div><!-- End blog comments -->
+            </div><!-- End blog comments --> {% endcomment %}
 
           </div><!-- End blog entries list -->
 

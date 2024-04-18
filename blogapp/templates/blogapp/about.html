@@ -1,0 +1,23 @@
+{% extends "blogapp/base.html" %}
+{% load static %}
+{% block title %}About Us {% endblock %}
+{% block content %} 
+
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs">
+  <div class="page-header ">
+
+  </div>
+  <nav>
+    <div class="container">
+      <ol>
+        <li><a href="/">home</a></li>
+        <li><a href="{% url 'about' %}">about</a></li>
+      </ol>
+    </div>
+  </nav>
+</div><!-- End Breadcrumbs -->
+
+
+
+{% endblock %}
