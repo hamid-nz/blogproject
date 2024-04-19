@@ -26,6 +26,7 @@ class HomeView(TemplateView):
         context["all_post"]= all_post
         context["all_category"]= all_category
         return context
+
         
 #========================================== SIMPLE PAGES ===============================
 class AboutView(TemplateView):
