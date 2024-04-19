@@ -12,11 +12,6 @@ urlpatterns = [
     path('sign-in/', sign_in, name='sign-in'),   
     path('sign-out/', sign_out, name='sign-out'),   
     path('account/', Account, name='account'),   
-#essential pages
-    path( 'about/', AboutView.as_view(), name='about' ),
-    path( 'contact/', ContactView.as_view(), name='contact' ),
-    path( 'desclaimer/', DisclaimerView.as_view(), name='desclaimer' ),
-    path( 'terms-conditions/', TCView.as_view(), name='termcondition' ),
 
 ]
 
