@@ -21,7 +21,7 @@ class HomeView(TemplateView):
     template_name = 'blogapp/home.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        all_post= BlogPost.objects.all()
+        all_post= BlogPost.objects.order_by('-published_date')
         all_category= Category.objects.all()
         context["all_post"]= all_post
         context["all_category"]= all_category
@@ -51,6 +51,7 @@ class SinglePostView(TemplateView):
         return render(request, self.template_name, {'single_post': single_post})
 
 
+
 # class SingleCategoryView(TemplateView):
 #     template_name = 'blogapp/single_category.html'
 #     context_object_name = 'single_category'
@@ -63,8 +64,10 @@ class SinglePostView(TemplateView):
 def get_blog_by_category(request, category_url):
     cats= Category.objects.get(category_url= category_url)
     blogs= BlogPost.objects.filter(category= cats)
-    context= { 'blogs': blogs }
+    context= { 'blogs': blogs, 'cats':cats}
     return render(request, 'blogapp/single_category.html', context )
+
+
 
     
 # user authentication Login and register

@@ -132,7 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS= {
     'site_header': "Admin Panel",
-    'site_brand': "WooCommerce",
+    'site_brand': "BlogProject",
 }
 
 CKEDITOR_UPLOAD_PATH= 'uploads/'

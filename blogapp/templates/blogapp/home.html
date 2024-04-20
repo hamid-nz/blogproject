@@ -75,7 +75,7 @@
               <div class="sidebar-item categories">
                 <ul>
                   {% for a in all_category %}
-                    <li><a href="{% url 'single_category' a.category_url %}">{{a.name}}<span>(25)</span></a></li>
+                    <li><a href="{% url 'single_category' a.category_url %}">{{a.name}}<span></span></a></li>
                   {% endfor %}
                   
                   
@@ -84,35 +84,13 @@
 
               <h3 class="sidebar-title">Recent Posts</h3>
               <div class="sidebar-item recent-posts">
-                <div class="post-item clearfix">
-                  <img src="{% static 'blogapp/img/blog/blog-recent-1.jpg' %}" alt="">
-                  <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{% static 'blogapp/img/blog/blog-recent-2.jpg' %}" alt="">
-                  <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{% static 'blogapp/img/blog/blog-recent-3.jp' %}" alt="">
-                  <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{% static 'blogapp/img/blog/blog-recent-4.jpg' %}" alt="">
-                  <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{% static 'blogapp/img/blog/blog-recent-5.jpg' %}" alt="">
-                  <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
+                {% for a in all_post %}
+                  <div class="post-item clearfix">
+                    <img src="/media/{{a.featured_image}}" alt="" style="width: 5rem; height:4rem ;" >
+                    <h4><a href="{% url 'single_post' a.post_url %}">{{a.title}}</a></h4>
+                    <time>{{a.published_date}}</time>
+                  </div>
+                {% endfor %}                  
 
               </div><!-- End sidebar recent posts-->
 

@@ -7,17 +7,14 @@
 
     <div class="page-header-content">
       <h1>This is page</h1>
-
     </div>
-
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container text-center ">
-        {% comment %} <h1> HAmis jpoj  </h1> {% endcomment %}
         <ol >          
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li>Blog Single</li>
+          <li><a href="/">Home</a></li>
+          <li><a href="{% url 'single_category' cats.category_url %}">{{cats.name}}</a></li>
+
         </ol>
 
       </div>
