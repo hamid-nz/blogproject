@@ -2,10 +2,10 @@ from django.db import models
 from autoslug import AutoSlugField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 
 # Create your models here.
-
 
 class Category(models.Model):
     name= models.CharField(max_length= 100)
@@ -18,7 +18,6 @@ class Category(models.Model):
 class BlogPost(models.Model):
     title= models.CharField(max_length=100)
     post_url= AutoSlugField(populate_from= 'title', unique= True, max_length=100)
-    # author= models.ForeignKey(User, on_delete=models.CASCADE)
     dicription= models.TextField(blank=True)
     featured_image= models.ImageField(upload_to='uploads')
     content=RichTextUploadingField(blank=True)
